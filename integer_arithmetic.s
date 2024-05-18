@@ -67,24 +67,24 @@ smaller_or_equals:
     # Y1 = 4*X
     li t5, 4
     mul s2, t2, t5
-    j result
+    j not_even
     
 bigger_than_four:
     # Y1 = X - A
     sub s2, t2, t1
-    j result
+    j not_even
 
-result:
-    # Y2 = 7 если X четное
+not_even:  
+    # Y2 = 7 если X нечетное
     li t5, 1          
     and t5, t2, t5    
-    beqz t5, not_even  
+    beqz t5, even  
     
     # X - нечетное
     li s3, 7
     j print_result
 
-not_even:
+even:
     # X - четное
     # X - нечетное
     srai s3, t2, 1     # Y2 = (X / 2)
