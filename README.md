@@ -1,4 +1,4 @@
-# RISC-V Assembler Project
+# RISC-V Assembler Programm for integer operations
 
 ## Overview
 
